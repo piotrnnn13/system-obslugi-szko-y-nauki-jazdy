@@ -1,17 +1,196 @@
-# system-obslugi-szko-y-nauki-jazdy
+# System Zarządzania Szkołą Nauki Jazdy
 
- Cel: Celem projektu jest stworzenie systemu informatycznego wspomagającego organizację szkoły nauki jazdy. System będzie umożliwiać zarządzanie kursantami, instruktorami, pojazdami oraz harmonogramem zajęć teoretycznych i praktycznych. Dzięki niemu kursanci będą mogli rezerwować zajęcia online, a instruktorzy zarządzać swoimi lekcjami.
-Zakres: System będzie obejmować: 
-• Rejestrację kursantów, instruktorów i wykładowców. 
-• Planowanie i zarządzanie lekcjami teoretycznymi oraz praktycznymi. 
-• Monitorowanie postępów kursantów. 
-• Obsługę płatności za kursy. 
-• Zarządzanie pojazdami.
-Kontekst: System przeznaczony jest dla kursanta, instruktora i pracownika administracji szkoły nauki jazdy.
-Wymagania funkcjonalne: 
-• Rejestracja kursantów (imię, nazwisko, nr telefonu, adres, nr PESEL, nr PKK, status wewnętrznego egzaminu teoretycznego, status wewnętrznego egzaminu praktycznego) w systemie wraz z wyborem ich kursu (edycja, kategoria, kwota, liczba godzin teoretycznych, liczba godzin praktycznych). Kursant musi posiadać dokładnie jeden kurs, a kurs ma jednego lub wielu kursantów. 
-• Zarządzanie kursantami (dodawanie, edycja, usuwanie). 
-• Zarządzanie instruktorami (nr ewidencyjny, imię, nazwisko, uprawnienia, adres, nr telefonu) oraz pojazdami (marka, model, kategoria, numer rejestracyjny). Instruktor ma przypisany jeden lub wiele pojazdów, ale pojazd jest przypisany
-• Moduł płatności (nr PKK, status, metoda płatności, data, kwota). Każda płatność musi mieć dokładnie jednego kursanta, który jej dokonuje oraz dokładnie jeden kurs, którego dotyczy. Kursant realizuje zero lub wiele płatności. 
-• Zarządzanie zajęciami praktycznymi (id lekcji, data, godz. rozpoczęcia, godz. zakończenia). Instruktor prowadzi zero lub jedne zajęcia, ale jazdy mają dokładnie jednego instruktora. Kursant uczestniczy w jednych lub w wielu jazdach. Zajęcia mają dokładnie jednego kursanta. Wykonana jazda nadpisuje poczyniony postęp dokładnie raz, ale postęp może być nadpisywany przez zero lub wiele jazd. Jazda dotyczy dokładnie jednego kursu. 
-• Zarządzanie zajęciami teoretycznymi (id wykładu, data, godz. rozpoczęcia, godz. zakończenia). Każdy wykład jest uczęszczany przez 0 lub wielu kursantów (z czego każdy z nich może uczęszczać na 0 lub wiele wykładów), prowadzony przez dokładnie jednego wykładowcę (który może prowadzić kilka wykładów) oraz uaktualnia 0 lub wiele postępów. Postęp natomiast jest uaktualniany przez 0 lub więcej wykładów. Wykład dotyczy dokładnie jednego kursu.
+## Opis projektu
+
+System informatyczny wspomagający organizację szkoły nauki jazdy. Aplikacja umożliwia zarządzanie kursantami, instruktorami, wykładowcami, pojazdami, płatnościami oraz harmonogramem zajęć teoretycznych i praktycznych.
+
+Celem projektu jest usprawnienie działania szkoły jazdy poprzez cyfryzację procesów administracyjnych i organizacyjnych.
+
+---
+
+# Metadane projektu
+
+| Pole                  | Wartość                                                                |
+| --------------------- | ---------------------------------------------------------------------- |
+| Nazwa projektu        | System Zarządzania Szkołą Nauki Jazdy                                  |
+| Typ projektu          | System informatyczny / aplikacja webowa                                |
+| Przeznaczenie         | Organizacja pracy szkoły jazdy                                         |
+| Główne technologie    | SQL, system bazodanowy, backend, frontend                              |
+| Użytkownicy systemu   | Kursant, Instruktor, Wykładowca, Administracja                         |
+| Zakres projektu       | Zarządzanie kursami, płatnościami, harmonogramem i postępami kursantów |
+| Główna funkcjonalność | Rezerwacja i zarządzanie zajęciami online                              |
+| Status projektu       | Projekt akademicki                                                     |
+
+---
+
+# Cel projektu
+
+Celem projektu jest stworzenie systemu informatycznego wspomagającego organizację szkoły nauki jazdy. System umożliwia:
+
+* zarządzanie kursantami,
+* zarządzanie instruktorami,
+* zarządzanie pojazdami,
+* planowanie zajęć teoretycznych i praktycznych,
+* monitorowanie postępów kursantów,
+* obsługę płatności,
+* internetową rezerwację zajęć.
+
+---
+
+# Zakres systemu
+
+System obejmuje:
+
+* rejestrację kursantów, instruktorów i wykładowców,
+* zarządzanie kursami prawa jazdy,
+* planowanie zajęć teoretycznych i praktycznych,
+* monitorowanie postępów kursantów,
+* obsługę płatności za kursy,
+* zarządzanie flotą pojazdów,
+* harmonogram zajęć,
+* obsługę egzaminów wewnętrznych.
+
+---
+
+# Role użytkowników
+
+## Kursant
+
+* zapis na kurs,
+* podgląd harmonogramu,
+* rezerwacja jazd,
+* śledzenie postępów,
+* podgląd płatności.
+
+## Instruktor
+
+* zarządzanie jazdami praktycznymi,
+* podgląd harmonogramu,
+* aktualizacja postępów kursanta,
+* obsługa przypisanych pojazdów.
+
+## Wykładowca
+
+* prowadzenie wykładów,
+* zarządzanie zajęciami teoretycznymi,
+* aktualizacja postępów kursantów.
+
+## Administracja
+
+* zarządzanie użytkownikami,
+* zarządzanie kursami,
+* zarządzanie płatnościami,
+* zarządzanie pojazdami,
+* organizacja harmonogramu.
+
+---
+
+# Wymagania funkcjonalne
+
+## Kursanci
+
+* rejestracja kursanta,
+* edycja danych kursanta,
+* usuwanie kursanta,
+* przypisanie kursu,
+* monitorowanie postępów,
+* obsługa egzaminów wewnętrznych.
+
+## Instruktorzy i pojazdy
+
+* dodawanie instruktorów,
+* edycja danych instruktorów,
+* przypisywanie pojazdów,
+* zarządzanie flotą pojazdów.
+
+## Płatności
+
+* rejestracja płatności,
+* obsługa różnych metod płatności,
+* śledzenie statusu płatności,
+* przypisanie płatności do kursanta i kursu.
+
+## Zajęcia praktyczne
+
+* planowanie jazd,
+* przypisanie instruktora,
+* przypisanie kursanta,
+* aktualizacja postępów.
+
+## Zajęcia teoretyczne
+
+* planowanie wykładów,
+* przypisywanie wykładowców,
+* przypisywanie kursantów,
+* aktualizacja postępów.
+
+---
+
+# Model danych
+
+## Główne encje
+
+* Kursant
+* Kurs
+* Instruktor
+* Wykładowca
+* Pojazd
+* Płatność
+* Jazda praktyczna
+* Wykład
+* Postęp
+
+---
+
+# Relacje biznesowe
+
+* Kursant posiada dokładnie jeden kurs.
+* Kurs może mieć jednego lub wielu kursantów.
+* Instruktor może mieć przypisany jeden lub wiele pojazdów.
+* Pojazd jest przypisany do jednego instruktora.
+* Kursant może realizować wiele płatności.
+* Każda płatność dotyczy jednego kursanta i jednego kursu.
+* Jazda praktyczna posiada dokładnie jednego instruktora i jednego kursanta.
+* Wykład może być uczęszczany przez wielu kursantów.
+* Wykład prowadzony jest przez dokładnie jednego wykładowcę.
+* Postępy kursanta są aktualizowane przez wykłady oraz jazdy praktyczne.
+
+---
+
+# Przykładowe technologie
+
+## Backend
+
+* Java / Spring Boot
+* ASP.NET
+* Node.js
+
+## Frontend
+
+* React
+* Angular
+* Vue
+
+## Baza danych
+
+* PostgreSQL
+* MySQL
+* SQL Server
+
+---
+
+# Możliwe rozszerzenia
+
+* system powiadomień SMS/email,
+* integracja z płatnościami online,
+* aplikacja mobilna,
+* raporty i statystyki,
+* eksport danych do PDF/Excel,
+* integracja z systemami egzaminacyjnymi.
+
+---
+
+# Autor
+
+Projekt wykonany w celach edukacyjnych.
+ Instruktor, Wykładowca, Administ |
